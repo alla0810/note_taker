@@ -1,14 +1,11 @@
 # note_taker
   * Author: Kyosook Shin
   * Author's Email: kyosook.shin@gmail.com  
-  * GitHub: https://github.com/alla0810/svg_logo_maker
+  * GitHub: https://github.com/alla0810/note_taker
   * screenshot  
 
-<img src='./images/screen5.png' width="600">  
-
-<img src='./images/screen1.png' width="300">  
-
-<img src='./images/screen2.png' width="500">
+<img src='./public/assets/images/screen1.png' width="600">  
+<img src='./public/assets/images/screen2.png' width="600">
 
 
 

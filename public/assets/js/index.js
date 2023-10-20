@@ -57,20 +57,30 @@ const renderActiveNote = () => {
   hide(saveNoteBtn);
   hide(clearBtn);
 
-  console.log("activeNote.id", activeNote.id);
-
-  if (activeNote.id) {
+  if (activeNote === null)
+  {
     show(newNoteBtn);
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
-    noteTitle.value = activeNote.title;
-    noteText.value = activeNote.text;
-  } else {
-    hide(newNoteBtn);
-    noteTitle.removeAttribute('readonly');
-    noteText.removeAttribute('readonly');
-    noteTitle.value = '';
-    noteText.value = '';
+//    noteTitle.value = activeNote.title;
+//    noteText.value = activeNote.text;
+  }
+  else {
+    console.log("activeNote.id", activeNote.id);
+
+    if (activeNote.id) {
+      show(newNoteBtn);
+      noteTitle.setAttribute('readonly', true);
+      noteText.setAttribute('readonly', true);
+      noteTitle.value = activeNote.title;
+      noteText.value = activeNote.text;
+    } else {
+      hide(newNoteBtn);
+      noteTitle.removeAttribute('readonly');
+      noteText.removeAttribute('readonly');
+      noteTitle.value = '';
+      noteText.value = '';
+    }
   }
 };
 
@@ -90,9 +100,11 @@ const handleNoteDelete = (e) => {
   // Prevents the click listener for the list from being called when the button inside of it is clicked
   e.stopPropagation();
 
+//  console.log("handleNoteDelete");
+
   const note = e.target;
   const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
-  console.log("nodeId=", noteId);
+//  console.log("nodeId=", noteId);
 
   if (activeNote.id === noteId) {
     activeNote = {};
@@ -115,7 +127,7 @@ const handleNoteView = (e) => {
 
 // Sets the activeNote to and empty object and allows the user to enter a new note
 const handleNewNoteView = (e) => {
-  console.log("handleNewNoteView");
+//  console.log("handleNewNoteView");
   activeNote = {};
   show(clearBtn);
   renderActiveNote();
@@ -137,10 +149,10 @@ const handleRenderBtns = () => {
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
 
-  console.log("renderNoteList!!!!!");
-  console.log("jsonNotes = ", jsonNotes);
+//  console.log("renderNoteList!!!!!");
+//  console.log("jsonNotes = ", jsonNotes);
 
-  if (window.location.pathname === './notes.html') {
+  if (window.location.pathname === '/notes.html') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
 
@@ -186,11 +198,11 @@ const renderNoteList = async (notes) => {
     noteListItems.push(li);
   });
 
-  console.log(window.location.pathname);
+//  console.log(window.location.pathname);
 
 
   if (window.location.pathname === '/notes.html') {
-    console.log(noteList);    
+//    console.log(noteList);    
     noteListItems.forEach((note) => noteList[0].append(note));
   }
 };
