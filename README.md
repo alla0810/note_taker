@@ -2,6 +2,7 @@
   * Author: Kyosook Shin
   * Author's Email: kyosook.shin@gmail.com  
   * GitHub: https://github.com/alla0810/note_taker
+  * Heroku deploy: https://note-taker-for-you-081d407650f3.herokuapp.com/
   * screenshot  
 
 <img src='./public/assets/images/screen1.png' width="600">  
